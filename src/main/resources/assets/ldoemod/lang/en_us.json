@@ -2,5 +2,7 @@
   "item.ldoemod.battery": "Battery",
   "item.ldoemod.can_opener": "Can opener",
 
+  "block.ldoemod.barbed_wire": "Barbed wire",
+
   "creativetab.weapon_tab": "Weapons"
 }

@@ -22,6 +22,14 @@ public class ModCreativeModTabs
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> DEFENSE_TAB = CREATIVE_MODE_TABS.register("defense_tab",
+            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModBlocks.BARBED_WIRE.get()))
+                    .title(Component.translatable("creativetab.defense_tab"))
+                    .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModBlocks.BARBED_WIRE.get());
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
