@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ldoemod:barbed_wire"
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_bars",
+    "count": 9
+  }
+}
