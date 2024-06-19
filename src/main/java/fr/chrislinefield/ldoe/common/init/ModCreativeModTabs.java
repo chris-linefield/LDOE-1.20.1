@@ -27,6 +27,7 @@ public class ModCreativeModTabs
                     .title(Component.translatable("creativetab.defense_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.BARBED_WIRE.get());
+                        pOutput.accept(ModBlocks.QUICKSAND.get());
                     })
                     .build());
 
@@ -35,6 +36,15 @@ public class ModCreativeModTabs
                     .title(Component.translatable("creativetab.tool_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.METAL_DETECTOR.get());
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> INGREDIENT_TAB = CREATIVE_MODE_TABS.register("ingredient_tab",
+            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.NAILS.get()))
+                    .title(Component.translatable("creativetab.ingredient_tab"))
+                    .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.BATTERY.get());
+                        pOutput.accept(ModItems.NAILS.get());
                     })
                     .build());
 

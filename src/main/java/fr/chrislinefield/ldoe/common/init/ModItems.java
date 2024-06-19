@@ -15,6 +15,8 @@ public class ModItems
 
     public static final RegistryObject<Item> BATTERY = ITEMS.register("battery",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> NAILS = ITEMS.register("nails",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CAN_OPENER = ITEMS.register("can_opener",
             ()-> new Item(new Item.Properties()));

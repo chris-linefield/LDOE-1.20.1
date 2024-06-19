@@ -2,6 +2,7 @@ package fr.chrislinefield.ldoe.common.init;
 
 import fr.chrislinefield.ldoe.LDOEMod;
 import fr.chrislinefield.ldoe.common.block.BarbedWireBlock;
+import fr.chrislinefield.ldoe.common.block.QuicksandBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -18,7 +19,9 @@ public class ModBlocks
             DeferredRegister.create(ForgeRegistries.BLOCKS, LDOEMod.MOD_ID);
 
     public static final RegistryObject<Block> BARBED_WIRE = registerBlock("barbed_wire",
-            () -> new BarbedWireBlock());
+            BarbedWireBlock::new);
+    public static final RegistryObject<Block> QUICKSAND = registerBlock("quicksand",
+            QuicksandBlock::new);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -2,8 +2,10 @@
   "item.ldoemod.battery": "Battery",
   "item.ldoemod.can_opener": "Can opener",
   "item.ldoemod.metal_detector": "Metal detector",
+  "item.ldoemod.nails": "Nails",
 
   "block.ldoemod.barbed_wire": "Barbed wire",
+  "block.ldoemod.quicksand": "Quicksand",
 
   "creativetab.weapon_tab": "Weapons",
   "creativetab.defense_tab": "Defense",
