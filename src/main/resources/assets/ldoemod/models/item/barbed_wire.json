@@ -1,5 +1,5 @@
 {
-  "parent": "ldoecore:block/barbed_wire",
+  "parent": "ldoemod:block/barbed_wire",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

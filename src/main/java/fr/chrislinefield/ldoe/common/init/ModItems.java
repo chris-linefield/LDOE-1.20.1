@@ -1,6 +1,7 @@
 package fr.chrislinefield.ldoe.common.init;
 
 import fr.chrislinefield.ldoe.LDOEMod;
+import fr.chrislinefield.ldoe.common.item.MetalDetectorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,6 +18,9 @@ public class ModItems
 
     public static final RegistryObject<Item> CAN_OPENER = ITEMS.register("can_opener",
             ()-> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
+            ()-> new MetalDetectorItem(new Item.Properties().durability(60)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

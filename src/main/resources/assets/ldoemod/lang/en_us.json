@@ -1,8 +1,11 @@
 {
   "item.ldoemod.battery": "Battery",
   "item.ldoemod.can_opener": "Can opener",
+  "item.ldoemod.metal_detector": "Metal detector",
 
   "block.ldoemod.barbed_wire": "Barbed wire",
 
-  "creativetab.weapon_tab": "Weapons"
+  "creativetab.weapon_tab": "Weapons",
+  "creativetab.defense_tab": "Defense",
+  "creativetab.tool_tab": "Tools"
 }

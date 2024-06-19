@@ -30,6 +30,14 @@ public class ModCreativeModTabs
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> TOOL_TAB = CREATIVE_MODE_TABS.register("tool_tab",
+            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.METAL_DETECTOR.get()))
+                    .title(Component.translatable("creativetab.tool_tab"))
+                    .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.METAL_DETECTOR.get());
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
