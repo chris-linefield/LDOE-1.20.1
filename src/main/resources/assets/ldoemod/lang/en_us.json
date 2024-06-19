@@ -5,9 +5,11 @@
   "item.ldoemod.nails": "Nails",
 
   "block.ldoemod.barbed_wire": "Barbed wire",
+  "block.ldoemod.radioactive_block": "Radioactive Block",
   "block.ldoemod.quicksand": "Quicksand",
 
   "creativetab.weapon_tab": "Weapons",
   "creativetab.defense_tab": "Defense",
+  "creativetab.ingredient_tab": "Ingredients",
   "creativetab.tool_tab": "Tools"
 }

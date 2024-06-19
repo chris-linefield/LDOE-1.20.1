@@ -28,6 +28,7 @@ public class ModCreativeModTabs
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.BARBED_WIRE.get());
                         pOutput.accept(ModBlocks.QUICKSAND.get());
+                        pOutput.accept(ModBlocks.RADIOACTIVE_BLOCK.get());
                     })
                     .build());
 

@@ -3,6 +3,7 @@ package fr.chrislinefield.ldoe.common.init;
 import fr.chrislinefield.ldoe.LDOEMod;
 import fr.chrislinefield.ldoe.common.block.BarbedWireBlock;
 import fr.chrislinefield.ldoe.common.block.QuicksandBlock;
+import fr.chrislinefield.ldoe.common.block.RadioactiveBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -22,6 +23,8 @@ public class ModBlocks
             BarbedWireBlock::new);
     public static final RegistryObject<Block> QUICKSAND = registerBlock("quicksand",
             QuicksandBlock::new);
+    public static final RegistryObject<Block> RADIOACTIVE_BLOCK = registerBlock("radioactive_block",
+            RadioactiveBlock::new);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
