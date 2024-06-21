@@ -1,0 +1,8 @@
+{
+  "variants":{
+    "facing=north":{"model":"ldoemod:block/workbench"},
+    "facing=east":{"model":"ldoemod:block/workbench","y":90},
+    "facing=south":{"model":"ldoemod:block/workbench","y":180},
+    "facing=west":{"model":"ldoemod:block/workbench","y":270}
+  }
+}

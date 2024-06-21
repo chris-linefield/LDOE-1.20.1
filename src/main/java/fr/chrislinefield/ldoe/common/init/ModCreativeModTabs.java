@@ -15,10 +15,14 @@ public class ModCreativeModTabs
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LDOEMod.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> WEAPONS_TAB = CREATIVE_MODE_TABS.register("weapon_tab",
-            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.BATTERY.get()))
+            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.BAT.get()))
                     .title(Component.translatable("creativetab.weapon_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.BATTERY.get());
+                        pOutput.accept(ModItems.BAT.get());
+                        pOutput.accept(ModItems.FIRE_AXE.get());
+                        pOutput.accept(ModItems.BIG_AXE.get());
+                        pOutput.accept(ModItems.SWORD.get());
+                        pOutput.accept(ModItems.BIG_SWORD.get());
                     })
                     .build());
 

@@ -17,9 +17,7 @@ public class ModBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.RADIOACTIVE_BLOCK);
-        blockWithItem(ModBlocks.BARBED_WIRE);
         blockWithItem(ModBlocks.QUICKSAND);
-        blockWithItem(ModBlocks.WORKBENCH);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
