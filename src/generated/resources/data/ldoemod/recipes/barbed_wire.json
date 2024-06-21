@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "ldoemod:nails"
+    },
+    "X": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "pattern": [
+    "#X#",
+    "X#X",
+    "#X#"
+  ],
+  "result": {
+    "item": "ldoemod:barbed_wire"
+  },
+  "show_notification": true
+}
