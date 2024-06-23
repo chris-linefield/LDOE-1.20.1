@@ -23,6 +23,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 public class BoomerEntity extends Creeper
 {
@@ -44,10 +45,20 @@ public class BoomerEntity extends Creeper
     public void tick() {
         if(this.level().isClientSide()) {
             setupAnimationStates();
-            this.explodeBoomer();
+            checkProximityToPlayers();
         }
 
         super.tick();
+    }
+
+    private void checkProximityToPlayers() {
+        List<Player> players = this.level().getEntitiesOfClass(Player.class, this.getBoundingBox().inflate(5.0D));
+        for (Player player : players) {
+            if (this.distanceTo(player) < 5.0D) {
+                this.explodeBoomer();
+                break;
+            }
+        }
     }
 
     private void explodeBoomer() {
