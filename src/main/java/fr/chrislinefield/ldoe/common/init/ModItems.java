@@ -3,6 +3,7 @@ package fr.chrislinefield.ldoe.common.init;
 import fr.chrislinefield.ldoe.LDOEMod;
 import fr.chrislinefield.ldoe.common.item.MetalDetectorItem;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -65,6 +66,10 @@ public class ModItems
     //MISC
     public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
             () -> new RecordItem(6, ModSounds.BAR_BRAWL, new Item.Properties().stacksTo(1), 2440));
+
+    //SPAWNEGG
+    public static final RegistryObject<Item> BOOMER_SPANW_EGG = ITEMS.register("boomer_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.BOOMER, 0x7e9680, 0xc5d1c5, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

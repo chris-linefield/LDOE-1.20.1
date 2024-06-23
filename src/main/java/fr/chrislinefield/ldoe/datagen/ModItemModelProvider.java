@@ -61,6 +61,9 @@ public class ModItemModelProvider extends ItemModelProvider
         trimmedArmorItem(ModItems.SCRAP_BOOTS);
         //MISC
         simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
+        //EGG
+        withExistingParent(ModItems.BOOMER_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

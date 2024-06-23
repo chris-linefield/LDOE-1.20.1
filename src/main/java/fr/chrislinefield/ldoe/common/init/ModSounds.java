@@ -15,6 +15,9 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> METAL_DETECTOR_FOUND_ORE = registerSoundEvents("metal_detector_found_ore");
     public static final RegistryObject<SoundEvent> BAR_BRAWL = registerSoundEvents("bar_brawl");
+    public static final RegistryObject<SoundEvent> BOOMER_HURT = registerSoundEvents("boomer_hurt");
+    public static final RegistryObject<SoundEvent> BOOMER_DEATH = registerSoundEvents("boomer_death");
+    public static final RegistryObject<SoundEvent> BOOMER_AMBIENT = registerSoundEvents("boomer_ambient");
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(LDOEMod.MOD_ID, name)));

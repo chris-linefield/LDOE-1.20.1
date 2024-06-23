@@ -1,7 +1,9 @@
 package fr.chrislinefield.ldoe;
 
 import com.mojang.logging.LogUtils;
+import fr.chrislinefield.ldoe.client.render.entity.BoomerRenderer;
 import fr.chrislinefield.ldoe.common.init.*;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -47,9 +49,8 @@ public class LDOEMod
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.BATTERY);
-            event.accept(ModItems.CAN_OPENER);
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(ModItems.BOOMER_SPANW_EGG);
         }
     }
 
@@ -64,6 +65,7 @@ public class LDOEMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(ModEntities.BOOMER.get(), BoomerRenderer::new);
         }
     }
 }

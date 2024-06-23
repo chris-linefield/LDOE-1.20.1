@@ -12,5 +12,29 @@
         "stream": true
       }
     ]
+  },
+  "boomer_hurt": {
+    "sounds": [
+      {
+        "name": "ldoemod:boomer_hurt",
+        "stream": true
+      }
+    ]
+  },
+  "boomer_death": {
+    "sounds": [
+      {
+        "name": "ldoemod:boomer_death",
+        "stream": true
+      }
+    ]
+  },
+  "boomer_ambient": {
+    "sounds": [
+      {
+        "name": "ldoemod:boomer_ambient",
+        "stream": true
+      }
+    ]
   }
 }
