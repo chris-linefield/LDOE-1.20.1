@@ -7,6 +7,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -14,17 +15,22 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-public class BoomerEntity extends Monster
+import java.util.Collection;
+import java.util.Iterator;
+
+public class BoomerEntity extends Creeper
 {
+    private int explosionRadius = 4;
     private static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(BoomerEntity.class, EntityDataSerializers.BOOLEAN);
 
-    public BoomerEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+    public BoomerEntity(EntityType<? extends Creeper> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -38,9 +44,41 @@ public class BoomerEntity extends Monster
     public void tick() {
         if(this.level().isClientSide()) {
             setupAnimationStates();
+            this.explodeBoomer();
         }
 
         super.tick();
+    }
+
+    private void explodeBoomer() {
+        if (!this.level().isClientSide) {
+            this.dead = true;
+            this.level().explode(this, this.getX(), this.getY(), this.getZ(), (float)this.explosionRadius, Level.ExplosionInteraction.MOB);
+            this.discard();
+            this.spawnLingeringCloud();
+        }
+
+    }
+
+    private void spawnLingeringCloud() {
+        Collection<MobEffectInstance> $$0 = this.getActiveEffects();
+        if (!$$0.isEmpty()) {
+            AreaEffectCloud $$1 = new AreaEffectCloud(this.level(), this.getX(), this.getY(), this.getZ());
+            $$1.setRadius(2.5F);
+            $$1.setRadiusOnUse(-0.5F);
+            $$1.setWaitTime(10);
+            $$1.setDuration($$1.getDuration() / 2);
+            $$1.setRadiusPerTick(-$$1.getRadius() / (float)$$1.getDuration());
+            Iterator var3 = $$0.iterator();
+
+            while(var3.hasNext()) {
+                MobEffectInstance $$2 = (MobEffectInstance)var3.next();
+                $$1.addEffect(new MobEffectInstance($$2));
+            }
+
+            this.level().addFreshEntity($$1);
+        }
+
     }
 
     private void setupAnimationStates() {
@@ -90,8 +128,8 @@ public class BoomerEntity extends Monster
     }
 
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0, false));
+        this.goalSelector.addGoal(1, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new SwellGoal(this));
         this.goalSelector.addGoal(2, new BoomerAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8F));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
@@ -110,8 +148,8 @@ public class BoomerEntity extends Monster
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 80)
-                .add(Attributes.FOLLOW_RANGE, 35D)
-                .add(Attributes.MOVEMENT_SPEED, 0.25D)
+                .add(Attributes.FOLLOW_RANGE, 40D)
+                .add(Attributes.MOVEMENT_SPEED, 0.3D)
                 .add(Attributes.ATTACK_DAMAGE, 3f);
 
     }
