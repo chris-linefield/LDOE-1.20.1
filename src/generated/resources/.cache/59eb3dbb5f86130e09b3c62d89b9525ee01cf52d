@@ -1,5 +1,7 @@
-// 1.20.1	2024-06-21T17:09:52.104812	Loot Tables
+// 1.20.1	2024-06-22T22:06:54.4090917	Loot Tables
 83baa35b47a641e7f18e39c7d810412157591f2e data/ldoemod/loot_tables/blocks/barbed_wire.json
+be2b728438d183f7a90f65573177503d99da3175 data/ldoemod/loot_tables/blocks/corn_crop.json
 0075fc0c12ab33874309d2f2e256106e88e42d1b data/ldoemod/loot_tables/blocks/quicksand.json
 5590be9d68baba6358937fea6f64e1a9d4e26336 data/ldoemod/loot_tables/blocks/radioactive_block.json
+44f7bd7f15428201005c1d0dab9ff41b98a73f55 data/ldoemod/loot_tables/blocks/strawberry_crop.json
 44e4336363cad8469c5c3deaf62cf886c791dde3 data/ldoemod/loot_tables/blocks/workbench.json

@@ -19,10 +19,22 @@ public class ModCreativeModTabs
                     .title(Component.translatable("creativetab.weapon_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BAT.get());
+                        pOutput.accept(ModItems.DAGGER.get());
                         pOutput.accept(ModItems.FIRE_AXE.get());
                         pOutput.accept(ModItems.BIG_AXE.get());
                         pOutput.accept(ModItems.SWORD.get());
                         pOutput.accept(ModItems.BIG_SWORD.get());
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> ARMOR_TAB = CREATIVE_MODE_TABS.register("armor_tab",
+            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.SCRAP_CHESTPLATE.get()))
+                    .title(Component.translatable("creativetab.armor_tab"))
+                    .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.SCRAP_CHESTPLATE.get());
+                        pOutput.accept(ModItems.SCRAP_BOOTS.get());
+                        pOutput.accept(ModItems.SCRAP_HELMET.get());
+                        pOutput.accept(ModItems.SCRAP_LEGGINGS.get());
                     })
                     .build());
 
@@ -51,6 +63,7 @@ public class ModCreativeModTabs
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BATTERY.get());
                         pOutput.accept(ModItems.NAILS.get());
+                        pOutput.accept(ModItems.SCRAP_METAL.get());
                     })
                     .build());
 
@@ -58,7 +71,18 @@ public class ModCreativeModTabs
             () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.STRAWBERRY.get()))
                     .title(Component.translatable("creativetab.food_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.STRAWBERRY_SEEDS.get());
                         pOutput.accept(ModItems.STRAWBERRY.get());
+                        pOutput.accept(ModItems.CORN.get());
+                        pOutput.accept(ModItems.CORN_SEEDS.get());
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> MISC_TAB = CREATIVE_MODE_TABS.register("misc_tab",
+            () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.BAR_BRAWL_MUSIC_DISC.get()))
+                    .title(Component.translatable("creativetab.misc_tab"))
+                    .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
                     })
                     .build());
 

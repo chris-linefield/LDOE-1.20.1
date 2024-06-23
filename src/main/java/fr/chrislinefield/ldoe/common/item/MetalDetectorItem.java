@@ -1,9 +1,11 @@
 package fr.chrislinefield.ldoe.common.item;
 
+import fr.chrislinefield.ldoe.common.init.ModSounds;
 import fr.chrislinefield.ldoe.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -41,6 +43,9 @@ public class MetalDetectorItem extends Item
                     outputValuableCoordinates(positionClicked.below(i), player, state.getBlock());
                     foundBlock = true;
 
+                    pContext.getLevel().playSeededSound(null, positionClicked.getX(), positionClicked.getY(), positionClicked.getZ(),
+                            ModSounds.METAL_DETECTOR_FOUND_ORE.get(), SoundSource.BLOCKS, 1f, 1f, 0);
+
                     break;
                 }
             }
@@ -65,7 +70,7 @@ public class MetalDetectorItem extends Item
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block block)
     {
-        player.sendSystemMessage(Component.literal("Position trouvée " + I18n.get(block.getDescriptionId()) + "à " +
+        player.sendSystemMessage(Component.literal("Position trouvée " + I18n.get(block.getDescriptionId()) + "" + "à " +
                 "(" + blockPos.getX() + "," + blockPos.getY() + ',' + blockPos.getZ() + ")"));
     }
 

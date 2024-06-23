@@ -19,6 +19,7 @@ public class WorkbenchBlock extends BaseEntityBlock
 
     public WorkbenchBlock() {
         super(Properties.of()
+                .strength(2F)
                 .sound(SoundType.WOOD)
                 .mapColor(MapColor.WOOD)
                 .noOcclusion()

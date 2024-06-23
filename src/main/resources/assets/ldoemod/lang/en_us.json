@@ -1,22 +1,42 @@
 {
   "item.ldoemod.battery": "Battery",
-  "item.ldoemod.can_opener": "Can opener",
-  "item.ldoemod.metal_detector": "Metal detector",
+  "item.ldoemod.can_opener": "Can Opener",
+  "item.ldoemod.metal_detector": "Metal Detector",
   "item.ldoemod.nails": "Nails",
+  "item.ldoemod.scrap_metal": "Scrap Metal",
+
+  "item.ldoemod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.ldoemod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
+
+  "item.ldoemod.strawberry_seeds": "Strawberry Seeds",
   "item.ldoemod.strawberry": "Strawberry",
 
-  "item.ldoemod.bat": "Baseball bat",
+  "item.ldoemod.bat": "Baseball Bat",
+  "item.ldoemod.dagger": "Scrap Dagger",
+  "item.ldoemod.sword": "Scrap Sword",
+  "item.ldoemod.big_sword": "Large Scrap Sword",
+  "item.ldoemod.fire_axe": "Fire Axe",
+  "item.ldoemod.big_axe": "Scrap Big Axe",
 
-  "block.ldoemod.barbed_wire": "Barbed wire",
+  "item.ldoemod.scrap_helmet": "Scrap Helmet",
+  "item.ldoemod.scrap_chestplate": "Scrap Chestplate",
+  "item.ldoemod.scrap_leggings": "Scrap Leggings",
+  "item.ldoemod.scrap_boots": "Scrap Boots",
+
+  "block.ldoemod.barbed_wire": "Barbed Wire",
   "block.ldoemod.radioactive_block": "Radioactive Block",
   "block.ldoemod.quicksand": "Quicksand",
   "block.ldoemod.workbench": "Workbench",
 
-  "tooltip.ldoemod.metal_detector.tooltip": "Outil pour trouver du minerai proche de vous !",
+  "tooltip.ldoemod.metal_detector.tooltip": "A tool for finding ore near you!",
+
+  "sounds.ldoemod.metal_detector_found_ore": "Metal detector sound",
 
   "creativetab.weapon_tab": "Weapons",
+  "creativetab.armor_tab": "Armors",
   "creativetab.block_tab": "Blocks",
   "creativetab.ingredient_tab": "Ingredients",
+  "creativetab.misc_tab": "Misc",
   "creativetab.food_tab": "Foods",
   "creativetab.tool_tab": "Tools"
 }

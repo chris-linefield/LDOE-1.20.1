@@ -1,0 +1,16 @@
+{
+  "metal_detector_found_ore": {
+    "subtitles": "sounds.ldoemod.metal_detector_found_ore",
+    "sounds": [
+      "ldoemod:metal_detector_found_ore"
+    ]
+  },
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "ldoemod:bar_brawl",
+        "stream": true
+      }
+    ]
+  }
+}

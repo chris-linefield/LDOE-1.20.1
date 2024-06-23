@@ -1,9 +1,7 @@
 package fr.chrislinefield.ldoe;
 
 import com.mojang.logging.LogUtils;
-import fr.chrislinefield.ldoe.common.init.ModBlocks;
-import fr.chrislinefield.ldoe.common.init.ModCreativeModTabs;
-import fr.chrislinefield.ldoe.common.init.ModItems;
+import fr.chrislinefield.ldoe.common.init.*;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,7 +29,10 @@ public class LDOEMod
 
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModSounds.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

@@ -1,7 +1,24 @@
-// 1.20.1	2024-06-21T17:55:51.5660378	Block States: ldoemod
+// 1.20.1	2024-06-22T22:06:54.4142207	Block States: ldoemod
+5bbc9e1fbf222dbe05b9173366c99b021fbb2033 assets/ldoemod/blockstates/corn_crop.json
 f5e0742ba6f78b3f4e528436cdb8b50d0c66b6c4 assets/ldoemod/blockstates/quicksand.json
 a17567b6769c070e217499257d2820d93ef3d0d5 assets/ldoemod/blockstates/radioactive_block.json
+6b99736399f032642e522d22dfef66d4a67cb318 assets/ldoemod/blockstates/strawberry_crop.json
+c0f3d94cd2fbf39c6335f1ee559f36c14acf0750 assets/ldoemod/models/block/corn_stage_0.json
+23db0fd4342bf57f0b674e2b94501c520973878d assets/ldoemod/models/block/corn_stage_1.json
+cb6befdbfa5bfaad13473669656240382ef3524b assets/ldoemod/models/block/corn_stage_2.json
+a4ab2b6db9d7cef72b5f3832d8ed904821800127 assets/ldoemod/models/block/corn_stage_3.json
+d45a712f9e8a7a1325cdae216c57aef513725812 assets/ldoemod/models/block/corn_stage_4.json
+e18b3c4a9b70a758d060999518325991ed72c500 assets/ldoemod/models/block/corn_stage_5.json
+5d0870992ce4d3af63d1efe2d80544c828daa067 assets/ldoemod/models/block/corn_stage_6.json
+66cc16239b87dc279d09a52e30f53ffbdbb352fd assets/ldoemod/models/block/corn_stage_7.json
+dc72953e1bbc0ce1035a788fd4c6ccff6274dee2 assets/ldoemod/models/block/corn_stage_8.json
 bf712b6bf2208d88488e8ff76fd955e57c7f7bc3 assets/ldoemod/models/block/quicksand.json
 74d0305dc030b2fa9d83714b2232ee220693420a assets/ldoemod/models/block/radioactive_block.json
+a3031b61117969f0398cbf5d44dee14fe9862e2e assets/ldoemod/models/block/strawberry_stage0.json
+d205df352441a0700a9191156ffbe571d79ea04b assets/ldoemod/models/block/strawberry_stage1.json
+868c02e1b6e5fb0be2d62212ff4a144fd50bf03d assets/ldoemod/models/block/strawberry_stage2.json
+1126ef6adeafb2bcf1a99fc3b8efd288bf3b6d6b assets/ldoemod/models/block/strawberry_stage3.json
+1379ec117b3fe1b0c6a18509184b5cd3ccfbc461 assets/ldoemod/models/block/strawberry_stage4.json
+130673e872501fb4bb150638d861722435dd813a assets/ldoemod/models/block/strawberry_stage5.json
 bdda66f392544b89bfc6d338bc112b0f6ee07b8f assets/ldoemod/models/item/quicksand.json
 7483073bac0a2c769a59f56c43b7fa47384ecbee assets/ldoemod/models/item/radioactive_block.json
