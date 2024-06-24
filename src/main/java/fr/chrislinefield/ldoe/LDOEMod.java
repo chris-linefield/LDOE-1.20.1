@@ -33,6 +33,7 @@ public class LDOEMod
         ModCreativeModTabs.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);
 

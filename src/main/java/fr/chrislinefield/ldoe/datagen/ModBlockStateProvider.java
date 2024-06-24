@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -29,6 +30,9 @@ public class ModBlockStateProvider extends BlockStateProvider
 
         makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
         makeCornCrop(((CropBlock) ModBlocks.CORN_CROP.get()), "corn_stage_", "corn_stage_");
+
+        simpleBlockWithItem(ModBlocks.WORKBENCH.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/workbench")));
     }
 
     public void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
