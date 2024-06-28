@@ -1,8 +1,9 @@
-// 1.20.1	2024-06-22T22:06:54.4142207	Block States: ldoemod
+// 1.20.1	2024-06-28T13:41:56.7007164	Block States: ldoemod
 5bbc9e1fbf222dbe05b9173366c99b021fbb2033 assets/ldoemod/blockstates/corn_crop.json
 f5e0742ba6f78b3f4e528436cdb8b50d0c66b6c4 assets/ldoemod/blockstates/quicksand.json
 a17567b6769c070e217499257d2820d93ef3d0d5 assets/ldoemod/blockstates/radioactive_block.json
 6b99736399f032642e522d22dfef66d4a67cb318 assets/ldoemod/blockstates/strawberry_crop.json
+4c8768169f62dd633a599e5216dd471e6cf00fae assets/ldoemod/blockstates/workbench.json
 c0f3d94cd2fbf39c6335f1ee559f36c14acf0750 assets/ldoemod/models/block/corn_stage_0.json
 23db0fd4342bf57f0b674e2b94501c520973878d assets/ldoemod/models/block/corn_stage_1.json
 cb6befdbfa5bfaad13473669656240382ef3524b assets/ldoemod/models/block/corn_stage_2.json

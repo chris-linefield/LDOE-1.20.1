@@ -31,7 +31,7 @@ public class ModBlockStateProvider extends BlockStateProvider
         makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
         makeCornCrop(((CropBlock) ModBlocks.CORN_CROP.get()), "corn_stage_", "corn_stage_");
 
-        simpleBlockWithItem(ModBlocks.WORKBENCH.get(),
+        horizontalBlock(ModBlocks.WORKBENCH.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/workbench")));
     }
 

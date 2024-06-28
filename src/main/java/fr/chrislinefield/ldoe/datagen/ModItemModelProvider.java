@@ -1,6 +1,7 @@
 package fr.chrislinefield.ldoe.datagen;
 
 import fr.chrislinefield.ldoe.LDOEMod;
+import fr.chrislinefield.ldoe.common.init.ModBlocks;
 import fr.chrislinefield.ldoe.common.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -63,7 +64,14 @@ public class ModItemModelProvider extends ItemModelProvider
         simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
         //EGG
         withExistingParent(ModItems.BOOMER_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        //BLOCK
+        complexBlock(ModBlocks.WORKBENCH.get());
 
+    }
+
+    private ItemModelBuilder complexBlock(Block block) {
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(LDOEMod.MOD_ID,
+                "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

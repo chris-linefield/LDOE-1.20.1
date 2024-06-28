@@ -1,4 +1,4 @@
-// 1.20.1	2024-06-23T16:56:41.1502152	Item Models: ldoemod
+// 1.20.1	2024-06-28T13:41:56.6977248	Item Models: ldoemod
 6e9dcbefa1b617aeab595dd1b79d1898137b92c4 assets/ldoemod/models/item/bar_brawl_music_disc.json
 0e56c361fa07d3f25b8274e38188a9299f117d7a assets/ldoemod/models/item/battery.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/ldoemod/models/item/boomer_spawn_egg.json
@@ -54,3 +54,4 @@ beb165a05be3d7199bde66f879f63fd3e38ea19e assets/ldoemod/models/item/scrap_leggin
 65fa8f39e08e41dd46ef8d4510df2f171959b087 assets/ldoemod/models/item/scrap_metal.json
 046ddcbf0dc69da892edd88199748035cbe20637 assets/ldoemod/models/item/strawberry.json
 f7782e47826df8f1e3b5b6cee0c6dd7133df5227 assets/ldoemod/models/item/strawberry_seeds.json
+2e60860f4d7e3abb2fc81ff572eb0b3e4fef382b assets/ldoemod/models/item/workbench.json
