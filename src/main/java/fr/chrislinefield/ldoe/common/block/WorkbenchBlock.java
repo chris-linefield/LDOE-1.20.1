@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.*;
 public class WorkbenchBlock extends HorizontalDirectionalBlock
 {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    protected static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
+    protected static final VoxelShape SHAPE_UP = Block.box(0, 0, 0, 16, 12, 16);
 
     public WorkbenchBlock() {
         super(Properties.of()
@@ -39,7 +39,7 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return SHAPE;
+        return SHAPE_UP;
     }
 
     @Nullable
