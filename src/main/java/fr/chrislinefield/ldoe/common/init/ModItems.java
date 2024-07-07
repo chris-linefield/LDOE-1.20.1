@@ -1,7 +1,6 @@
 package fr.chrislinefield.ldoe.common.init;
 
 import fr.chrislinefield.ldoe.LDOEMod;
-import fr.chrislinefield.ldoe.common.item.GhillieSuitArmor;
 import fr.chrislinefield.ldoe.common.item.MetalDetectorItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -48,14 +47,6 @@ public class ModItems
             () -> new ModArmorItem(ModArmorMaterials.SCRAP, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> SCRAP_BOOTS = ITEMS.register("scrap_boots",
             () -> new ModArmorItem(ModArmorMaterials.SCRAP, ArmorItem.Type.BOOTS, new Item.Properties()));
-    public static final RegistryObject<Item> GHILLIE_HELMET = ITEMS.register("ghillie_helmet",
-            () -> new GhillieSuitArmor(ModArmorMaterials.GHILLIE, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final RegistryObject<Item> GHILLIE_CHESTPLATE = ITEMS.register("ghillie_chestplate",
-            () -> new GhillieSuitArmor(ModArmorMaterials.GHILLIE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    public static final RegistryObject<Item> GHILLIE_LEGGINGS = ITEMS.register("ghillie_leggings",
-            () -> new GhillieSuitArmor(ModArmorMaterials.GHILLIE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-    public static final RegistryObject<Item> GHILLIE_BOOTS = ITEMS.register("ghillie_boots",
-            () -> new GhillieSuitArmor(ModArmorMaterials.GHILLIE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
     //FOODS
