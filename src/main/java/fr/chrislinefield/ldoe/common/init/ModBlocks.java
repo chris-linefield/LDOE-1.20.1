@@ -27,6 +27,8 @@ public class ModBlocks
             RadioactiveBlock::new);
     public static final RegistryObject<Block> WORKBENCH = registerBlock("workbench",
             WorkbenchBlock::new);
+    public static final RegistryObject<Block> DUNGEON_PORTAL = registerBlock("mining_portal",
+            DungeonPortalBlock::new);
 
     public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
             () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));

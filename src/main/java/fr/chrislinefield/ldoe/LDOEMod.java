@@ -4,16 +4,18 @@ import com.mojang.logging.LogUtils;
 import fr.chrislinefield.ldoe.client.render.entity.BoomerRenderer;
 import fr.chrislinefield.ldoe.common.init.*;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -24,6 +26,8 @@ public class LDOEMod
 {
     public static final String MOD_ID = "ldoemod";
     private static final Logger LOGGER = LogUtils.getLogger();
+    public static ResourceKey<Level> DUNGEON_WORLD;
+    public static ResourceKey<Level> OVERWORLD;
 
     public LDOEMod()
     {
@@ -41,6 +45,12 @@ public class LDOEMod
 
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+    }
+
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        DUNGEON_WORLD = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(LDOEMod.MOD_ID,"mining_world"));
+        OVERWORLD = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("minecraft:overworld"));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

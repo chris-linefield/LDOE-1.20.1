@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": {"model": "ldoemod:block/mining_portal"}
+  }
+}

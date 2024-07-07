@@ -35,6 +35,10 @@ public class ModCreativeModTabs
                         pOutput.accept(ModItems.SCRAP_BOOTS.get());
                         pOutput.accept(ModItems.SCRAP_HELMET.get());
                         pOutput.accept(ModItems.SCRAP_LEGGINGS.get());
+                        pOutput.accept(ModItems.GHILLIE_CHESTPLATE.get());
+                        pOutput.accept(ModItems.GHILLIE_BOOTS.get());
+                        pOutput.accept(ModItems.GHILLIE_HELMET.get());
+                        pOutput.accept(ModItems.GHILLIE_LEGGINGS.get());
                     })
                     .build());
 
@@ -46,6 +50,7 @@ public class ModCreativeModTabs
                         pOutput.accept(ModBlocks.QUICKSAND.get());
                         pOutput.accept(ModBlocks.RADIOACTIVE_BLOCK.get());
                         pOutput.accept(ModBlocks.WORKBENCH.get());
+                        pOutput.accept(ModBlocks.DUNGEON_PORTAL.get());
                     })
                     .build());
 
