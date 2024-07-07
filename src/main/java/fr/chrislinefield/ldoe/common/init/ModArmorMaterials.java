@@ -11,6 +11,8 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     SCRAP("scrap", 26, new int[]{ 5, 7, 5, 4 }, 25,
+            SoundEvents.ARMOR_EQUIP_CHAIN, 1f, 0f, () -> Ingredient.of(ModItems.SCRAP_METAL.get())),
+    GHILLIE("ghillie", 26, new int[]{ 5, 7, 5, 4 }, 25,
             SoundEvents.ARMOR_EQUIP_CHAIN, 1f, 0f, () -> Ingredient.of(ModItems.SCRAP_METAL.get()));
 
     private final String name;
