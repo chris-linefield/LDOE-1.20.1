@@ -50,7 +50,8 @@ public class ModCreativeModTabs
                         pOutput.accept(ModBlocks.QUICKSAND.get());
                         pOutput.accept(ModBlocks.RADIOACTIVE_BLOCK.get());
                         pOutput.accept(ModBlocks.WORKBENCH.get());
-                        pOutput.accept(ModBlocks.DUNGEON_PORTAL.get());
+                        pOutput.accept(ModBlocks.MINING_PORTAL.get());
+                        pOutput.accept(ModBlocks.GARBAGE_BLOCK.get());
                     })
                     .build());
 

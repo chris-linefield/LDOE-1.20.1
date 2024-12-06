@@ -15,6 +15,9 @@ public class ModItems
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, LDOEMod.MOD_ID);
 
+    //BLOCK
+    //public static RegistryObject<BlockItem> GARBAGE = ITEMS.register("garbage_item", () -> new BlockItem(ModBlocks.GARBAGE_BLOCK.get(), new Item.Properties()));
+
     //INGREDIENTS
     public static final RegistryObject<Item> BATTERY = ITEMS.register("battery",
             () -> new Item(new Item.Properties()));

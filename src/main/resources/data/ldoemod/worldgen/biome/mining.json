@@ -1,10 +1,10 @@
 {
-  "temperature": 0.2,
-  "downfall": 0.3,
-  "has_precipitation": true,
+  "temperature": 0.6,
+  "downfall": 0,
+  "has_precipitation": false,
   "effects": {
-    "sky_color": 8233727,
-    "fog_color": 12638463,
+    "sky_color": 0,
+    "fog_color": 0,
     "water_color": 4159204,
     "water_fog_color": 329011,
     "mood_sound": {
@@ -15,43 +15,56 @@
     }
   },
   "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 95,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:zombie_villager",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
+    "creature": [],
     "ambient": [
-
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
     ],
     "axolotls": [],
-    "creature": [
-
-    ],
-    "misc": [],
-    "monster": [
-
-    ],
     "underground_water_creature": [
-
+      {
+        "type": "minecraft:glow_squid",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 6
+      }
     ],
+    "water_creature": [],
     "water_ambient": [],
-    "water_creature": []
+    "misc": []
   },
   "spawn_costs": {},
   "carvers": {
     "air": [
-
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
     ]
   },
   "features": [
-    [],
     [
-
-    ],
-    [
-      "minecraft:amethyst_geode"
-    ],
-    [
-
-    ],
-    [],
-    [],
-    [
+      "minecraft:lake_lava_underground",
+      "minecraft:amethyst_geode",
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep",
       "minecraft:ore_dirt",
       "minecraft:ore_gravel",
       "minecraft:ore_granite_upper",
@@ -80,19 +93,8 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
+      "minecraft:glow_lichen",
       "minecraft:ore_emerald"
-    ],
-    [
-
-    ],
-    [
-
-    ],
-    [
-
-    ],
-    [
-
     ]
   ]
 }

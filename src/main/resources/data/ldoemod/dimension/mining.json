@@ -1,0 +1,11 @@
+{
+  "type": "ldoemod:mining",
+  "generator": {
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "ldoemod:mining"
+    },
+    "settings": "ldoemod:mining",
+    "type": "minecraft:noise"
+  }
+}

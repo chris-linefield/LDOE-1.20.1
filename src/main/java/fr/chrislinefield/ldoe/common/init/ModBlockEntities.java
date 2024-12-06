@@ -1,6 +1,8 @@
 package fr.chrislinefield.ldoe.common.init;
 
 import fr.chrislinefield.ldoe.LDOEMod;
+import fr.chrislinefield.ldoe.common.block.entity.GarbageBlockEntity;
+import fr.chrislinefield.ldoe.common.block.entity.MiningBlockEntity;
 import fr.chrislinefield.ldoe.common.block.entity.WorkbenchBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,6 +18,13 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("workbench_be", () ->
                     BlockEntityType.Builder.of(WorkbenchBlockEntity::new,
                             ModBlocks.WORKBENCH.get()).build(null));
+    public static final RegistryObject<BlockEntityType<?>> MININGBLOCK_BE =
+            BLOCK_ENTITIES.register("miningblock_be", () ->
+                    BlockEntityType.Builder.of(MiningBlockEntity::new,
+                            ModBlocks.MINING_PORTAL.get()).build(null));
+    public static RegistryObject<BlockEntityType<GarbageBlockEntity>> GARBAGE_BE =
+            BLOCK_ENTITIES.register("garbage_be", () -> BlockEntityType.Builder.of(GarbageBlockEntity::new,
+                    ModBlocks.GARBAGE_BLOCK.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

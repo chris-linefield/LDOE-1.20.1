@@ -1,8 +1,10 @@
 package fr.chrislinefield.ldoe;
 
-import com.mojang.logging.LogUtils;
 import fr.chrislinefield.ldoe.client.render.entity.BoomerRenderer;
 import fr.chrislinefield.ldoe.common.init.*;
+import fr.chrislinefield.ldoe.config.ConfigHelper;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -10,28 +12,46 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.slf4j.Logger;
+import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.minecraftforge.fml.loading.FMLPaths;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(LDOEMod.MOD_ID)
 public class LDOEMod
 {
     public static final String MOD_ID = "ldoemod";
-    private static final Logger LOGGER = LogUtils.getLogger();
-    public static ResourceKey<Level> DUNGEON_WORLD;
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+    public static ResourceKey<Level> MINING_DIMENSION;
     public static ResourceKey<Level> OVERWORLD;
 
     public LDOEMod()
     {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ConfigHelper.serverConfig);
+        ConfigHelper.loadConfig(ConfigHelper.serverConfig,
+                FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-server.toml").toString());
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConfigHelper.commonConfig);
+        ConfigHelper.loadConfig(ConfigHelper.commonConfig,
+                FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-common.toml").toString());
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::setup);
+
+        if (FMLEnvironment.dist.isClient()) {
+            modEventBus.addListener(this::doClientStuff);
+        }
 
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
@@ -41,21 +61,19 @@ public class LDOEMod
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);
 
-        modEventBus.addListener(this::commonSetup);
-
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        DUNGEON_WORLD = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(LDOEMod.MOD_ID,"mining_world"));
+        MINING_DIMENSION = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(LDOEMod.MOD_ID,"mining"));
         OVERWORLD = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("minecraft:overworld"));
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-
+    @OnlyIn(Dist.CLIENT)
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GARBAGE_BLOCK.get(), RenderType.translucent());
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
