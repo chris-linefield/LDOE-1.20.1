@@ -34,3 +34,5 @@ public class TitleScreenMixin extends Screen {
         }, Component.translatable("narrator.button.language")));
     }
 }
+
+//test ok
