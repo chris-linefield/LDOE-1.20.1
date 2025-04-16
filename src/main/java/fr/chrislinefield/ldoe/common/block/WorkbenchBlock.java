@@ -3,6 +3,8 @@ package fr.chrislinefield.ldoe.common.block;
 import fr.chrislinefield.ldoe.common.block.entity.WorkbenchBlockEntity;
 import fr.chrislinefield.ldoe.common.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -27,7 +29,7 @@ import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 import net.minecraft.world.level.block.*;
 
-public class WorkbenchBlock extends HorizontalDirectionalBlock
+public class WorkbenchBlock extends HorizontalDirectionalBlock implements EntityBlock
 {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     protected static final VoxelShape SHAPE = Block.box(-8, 0, -8, 24, 11, 24);
@@ -39,6 +41,7 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock
                 .mapColor(MapColor.WOOD)
                 .noOcclusion()
         );
+        registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 
     public BlockState rotate(BlockState pState, Rotation pRot) {
@@ -65,53 +68,27 @@ public class WorkbenchBlock extends HorizontalDirectionalBlock
         pBuilder.add(FACING);
     }
 
-    /* BLOCK ENTITY */
-/*
-    @Override
-    public RenderShape getRenderShape(BlockState pState) {
-        return RenderShape.MODEL;
-    }
-
-    @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (pState.getBlock() != pNewState.getBlock()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof WorkbenchBlockEntity) {
-                ((WorkbenchBlockEntity) blockEntity).drops;
-            }
-        }
-
-        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
-    }
-
-    @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide()) {
-            BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof WorkbenchBlockEntity) {
-                NetworkHooks.openScreen(((ServerPlayer)pPlayer), (WorkbenchBlockEntity)entity, pPos);
-            } else {
-                throw new IllegalStateException("Le container est manquant !");
-            }
-        }
-
-        return InteractionResult.sidedSuccess(pLevel.isClientSide());
-    }
-
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new WorkbenchBlockEntity(pPos, pState);
     }
 
-    @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        if(pLevel.isClientSide()) {
-            return null;
-        }
+    public RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
+    }
 
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.WORKBENCH_BE.get(),
-                (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
-    }*/
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if(!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND){
+            BlockEntity be = pLevel.getBlockEntity(pPos);
+            if(be instanceof WorkbenchBlockEntity blockEntity) {
+                int counter = blockEntity.incrementCounter();
+                pPlayer.sendSystemMessage(Component.literal("BlockEntity a été utilisée %d times".formatted(counter)));
+                return InteractionResult.sidedSuccess(pLevel.isClientSide);
+            }
+        }
+        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+    }
 }
