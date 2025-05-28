@@ -6,8 +6,6 @@
   "refmap": "mixins.ldoe.refmap.json",
   "mixins": [],
   "client": [
-    "TitleScreenMixin",
-    "MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -82,6 +82,8 @@ public class ModItems
     //SPAWNEGG
     public static final RegistryObject<Item> BOOMER_SPANW_EGG = ITEMS.register("boomer_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.BOOMER, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+    public static final RegistryObject<Item> CRAWLER_SPANW_EGG = ITEMS.register("crawler_zombie_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CRAWLER_ZOMBIE, 0x7e9680, 0xc5d1c5, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

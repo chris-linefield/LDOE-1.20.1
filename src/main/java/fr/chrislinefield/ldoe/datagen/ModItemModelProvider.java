@@ -64,6 +64,7 @@ public class ModItemModelProvider extends ItemModelProvider
         simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
         //EGG
         withExistingParent(ModItems.BOOMER_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.CRAWLER_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         //BLOCK
         complexBlock(ModBlocks.WORKBENCH.get());
 

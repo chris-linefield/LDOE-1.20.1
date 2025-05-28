@@ -52,6 +52,15 @@ public class ModCreativeModTabs
                         pOutput.accept(ModBlocks.WORKBENCH.get());
                         pOutput.accept(ModBlocks.MINING_PORTAL.get());
                         pOutput.accept(ModBlocks.GARBAGE_BLOCK.get());
+                        pOutput.accept(ModBlocks.BIGGARBAGE_BLOCK.get());
+                        pOutput.accept(ModBlocks.TRASHCAN_BLOCK.get());
+                        pOutput.accept(ModBlocks.GUNSHELF_BLOCK.get());
+                        pOutput.accept(ModBlocks.ARROWSTORAGE_BLOCK.get());
+                        pOutput.accept(ModBlocks.WOODGUNSHELF_BLOCK.get());
+                        pOutput.accept(ModBlocks.WALLGUN_BLOCK.get());
+                        pOutput.accept(ModBlocks.WISHBONEBAR_BLOCK.get());
+                        pOutput.accept(ModBlocks.KNIFEBOX_BLOCK.get());
+                        pOutput.accept(ModBlocks.LONGGUNSHELF_BLOCK.get());
                     })
                     .build());
 

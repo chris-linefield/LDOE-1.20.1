@@ -29,8 +29,26 @@ public class ModBlocks
             WorkbenchBlock::new);
     public static final RegistryObject<GarbageBlock> GARBAGE_BLOCK = registerBlock("garbage",
             GarbageBlock::new);
+    public static final RegistryObject<TrashCanBlock> TRASHCAN_BLOCK = registerBlock("trashcan",
+            TrashCanBlock::new);
+    public static final RegistryObject<BigGarbageBlock> BIGGARBAGE_BLOCK = registerBlock("biggarbage",
+            BigGarbageBlock::new);
+    public static final RegistryObject<GunShelfBlock> GUNSHELF_BLOCK = registerBlock("gunshelf",
+            GunShelfBlock::new);
     public static final RegistryObject<Block> MINING_PORTAL = registerBlock("mining_portal",
             MiningBlock::new);
+    public static final RegistryObject<ArrowStorageBlock> ARROWSTORAGE_BLOCK = registerBlock("arrowstorage",
+            ArrowStorageBlock::new);
+    public static final RegistryObject<WoodGunShelfBlock> WOODGUNSHELF_BLOCK = registerBlock("woodgunshelf",
+            WoodGunShelfBlock::new);
+    public static final RegistryObject<WallGunBlock> WALLGUN_BLOCK = registerBlock("wallgun",
+            WallGunBlock::new);
+    public static final RegistryObject<WishBoneBarBlock> WISHBONEBAR_BLOCK = registerBlock("wishbonebar",
+            WishBoneBarBlock::new);
+    public static final RegistryObject<KnifeBoxBlock> KNIFEBOX_BLOCK = registerBlock("knifebox",
+            KnifeBoxBlock::new);
+    public static final RegistryObject<LongGunShelfBlock> LONGGUNSHELF_BLOCK = registerBlock("longgunshelf",
+            LongGunShelfBlock::new);
 
     public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
             () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));

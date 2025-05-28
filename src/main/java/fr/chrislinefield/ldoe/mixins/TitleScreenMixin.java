@@ -1,6 +1,7 @@
 package fr.chrislinefield.ldoe.mixins;
 
 import fr.chrislinefield.ldoe.LDOEMod;
+import net.minecraft.Util;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.LanguageSelectScreen;
@@ -29,10 +30,7 @@ public class TitleScreenMixin extends Screen {
     private void ldoemod$init(CallbackInfo callback) {
         int l = this.height / 4 + 48;
 
-        this.addRenderableWidget(new ImageButton(this.width / 2 - 124, l + 48, 20, 20, 0, 0, 20, DISCORD_BUTTON, 20, 40, (p_280830_) -> {
-            this.minecraft.setScreen(new LanguageSelectScreen(this, this.minecraft.options, this.minecraft.getLanguageManager()));
-        }, Component.translatable("narrator.button.language")));
+        this.addRenderableWidget(new ImageButton(this.width / 2 - 124, l + 48, 20, 20, 0, 0, 20, DISCORD_BUTTON, 20, 40,
+                (p_280830_) -> {Util.getPlatform().openUri("https://discord.gg/7zhCSKKNDQ");}, Component.translatable("menu.discord")));
     }
 }
-
-//test ok

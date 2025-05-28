@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class GarbageBlockEntity extends BlockEntity
 {
-    private long lootTime = -1;
+    long lootTime = -1;
 
     public GarbageBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.GARBAGE_BE.get(), pos, state);

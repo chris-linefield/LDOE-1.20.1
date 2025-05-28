@@ -8,5 +8,7 @@ public class ModModelLayers
 {
     public static final ModelLayerLocation BOOMER_LAYER = new ModelLayerLocation(
             new ResourceLocation(LDOEMod.MOD_ID, "boomer_layer"), "main");
+    public static final ModelLayerLocation CRAWLER_LAYER = new ModelLayerLocation(
+            new ResourceLocation(LDOEMod.MOD_ID, "crawler_layer"), "main");
 
 }

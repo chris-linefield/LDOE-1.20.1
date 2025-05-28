@@ -12,5 +12,6 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.BOOMER.get(), BoomerEntity.createAttributes().build());
+        event.put(ModEntities.CRAWLER_ZOMBIE.get(), BoomerEntity.createAttributes().build());
     }
 }

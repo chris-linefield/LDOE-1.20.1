@@ -1,6 +1,7 @@
 package fr.chrislinefield.ldoe;
 
 import fr.chrislinefield.ldoe.client.render.entity.BoomerRenderer;
+import fr.chrislinefield.ldoe.client.render.entity.CrawlerZombieRenderer;
 import fr.chrislinefield.ldoe.common.init.*;
 import fr.chrislinefield.ldoe.config.ConfigHelper;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -74,12 +75,22 @@ public class LDOEMod
     @OnlyIn(Dist.CLIENT)
     private void doClientStuff(final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.GARBAGE_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BIGGARBAGE_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.TRASHCAN_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GUNSHELF_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARROWSTORAGE_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODGUNSHELF_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WALLGUN_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.WISHBONEBAR_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.KNIFEBOX_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.LONGGUNSHELF_BLOCK.get(), RenderType.translucent());
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BOOMER_SPANW_EGG);
+            event.accept(ModItems.CRAWLER_SPANW_EGG);
         }
     }
 
@@ -95,6 +106,7 @@ public class LDOEMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.BOOMER.get(), BoomerRenderer::new);
+            EntityRenderers.register(ModEntities.CRAWLER_ZOMBIE.get(), CrawlerZombieRenderer::new);
         }
     }
 }
