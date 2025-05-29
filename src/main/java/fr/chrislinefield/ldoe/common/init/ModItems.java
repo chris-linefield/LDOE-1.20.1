@@ -3,6 +3,8 @@ package fr.chrislinefield.ldoe.common.init;
 import fr.chrislinefield.ldoe.LDOEMod;
 import fr.chrislinefield.ldoe.common.item.GhillieSuitArmor;
 import fr.chrislinefield.ldoe.common.item.MetalDetectorItem;
+import fr.chrislinefield.ldoe.common.item.weapons.*;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,10 +31,20 @@ public class ModItems
             ()-> new Item(new Item.Properties()));
 
     //WEAPONS
-    public static final RegistryObject<Item> BAT = ITEMS.register("bat",
-            ()-> new SwordItem(Tiers.WOOD, 5, -2.8f, new Item.Properties()));
-    public static final RegistryObject<Item> DAGGER = ITEMS.register("dagger",
-            ()-> new SwordItem(Tiers.IRON, 2, -1, new Item.Properties()));
+    public static final RegistryObject<Item> WOODEN_BAT = ITEMS.register("wooden_bat",
+            ()-> new WoodenBatItem(Tiers.WOOD, WoodenBatItem.getAttackDamage(), WoodenBatItem.getAttackSpeed(), 1f,
+                    ModSounds.WOODEN_BAT_HIT.get(), new Item.Properties().durability(50)));
+    public static final RegistryObject<Item> STEEL_BAT = ITEMS.register("steel_bat",
+            () -> new SteelBatItem(Tiers.IRON, SteelBatItem.getAttackDamage(), SteelBatItem.getAttackSpeed(), 1.75f,
+                    ModSounds.METAL_BAT_HIT.get(), new Item.Properties().durability(125)));
+    public static final RegistryObject<Item> APOCALYPTIC_BAT = ITEMS.register("apocalyptic_bat",
+            ()-> new ApocalypticBatItem(Tiers.DIAMOND, ApocalypticBatItem.getAttackDamage(), ApocalypticBatItem.getAttackSpeed(), 3f,
+                    ModSounds.WOODEN_BAT_HIT.get(), new Item.Properties().durability(600)));
+
+    public static final RegistryObject<Item> FIRE_SWORD = ITEMS.register("fire_sword",
+            () -> new FireSwordItem(Tiers.IRON, 2, -2f,
+                    ModSounds.METAL_BAT_HIT.get(), new Item.Properties().durability(100)));
+
     public static final RegistryObject<Item> SWORD = ITEMS.register("sword",
             ()-> new SwordItem(Tiers.IRON, 4, -2, new Item.Properties()));
     public static final RegistryObject<Item> BIG_SWORD = ITEMS.register("big_sword",

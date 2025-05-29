@@ -18,6 +18,8 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> BOOMER_HURT = registerSoundEvents("boomer_hurt");
     public static final RegistryObject<SoundEvent> BOOMER_DEATH = registerSoundEvents("boomer_death");
     public static final RegistryObject<SoundEvent> BOOMER_AMBIENT = registerSoundEvents("boomer_ambient");
+    public static final RegistryObject<SoundEvent> WOODEN_BAT_HIT = registerSoundEvents("wooden_bat_hit");
+    public static final RegistryObject<SoundEvent> METAL_BAT_HIT = registerSoundEvents("metal_bat_hit");
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(LDOEMod.MOD_ID, name)));

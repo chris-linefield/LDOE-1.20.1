@@ -11,9 +11,12 @@
   "item.ldoemod.strawberry_seeds": "Strawberry Seeds",
   "item.ldoemod.strawberry": "Strawberry",
 
-  "item.ldoemod.bat": "Baseball Bat",
+  "item.ldoemod.bat": "Apocalyptic Baseball Bat",
+  "item.ldoemod.wooden_bat": "Wooden Bat",
+  "item.ldoemod.steel_bat": "Iron Bat",
   "item.ldoemod.dagger": "Scrap Dagger",
   "item.ldoemod.sword": "Scrap Sword",
+  "item.ldoemod.firesword": "Sword infused with gasoline",
   "item.ldoemod.big_sword": "Large Scrap Sword",
   "item.ldoemod.fire_axe": "Fire Axe",
   "item.ldoemod.big_axe": "Scrap Big Axe",
@@ -31,8 +34,16 @@
   "block.ldoemod.mining_portal" : "Portal to Dungeon World",
 
   "tooltip.ldoemod.metal_detector.tooltip": "A tool for finding ore near you!",
+  "tooltip.ldoemod.wooden_bat_desc": "Wooden bat... Still really hard to break, let's make some hits.",
+  "tooltip.ldoemod.steel_bat_desc": "Steel bat that's still in good condition, and it looks like it can strike lightning!",
+  "tooltip.ldoemod.apocalyptic_bat_desc": "The famous bat! A great man finally perfected this jewel, and now it's time to put it to good use.",
+  "tooltip.ldoemod.bat_level": "Level : ",
+  "tooltip.ldoemod.bat_damage": "Damage : ",
+  "tooltip.ldoemod.bat_attackspeed": "Attack speed : ",
+  "tooltip.ldoemod.steel_bat_charge": "Charge : ",
 
   "sounds.ldoemod.metal_detector_found_ore": "Metal detector sound",
+  "sounds.ldoemod.bat_hit": "Bat Hit",
 
   "creativetab.weapon_tab": "Weapons",
   "creativetab.armor_tab": "Armors",

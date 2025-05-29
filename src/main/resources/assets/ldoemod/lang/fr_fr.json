@@ -1,0 +1,55 @@
+{
+  "item.ldoemod.battery": "Batterie",
+  "item.ldoemod.can_opener": "Ouvre-boîte",
+  "item.ldoemod.metal_detector": "Détecteur de métaux",
+  "item.ldoemod.nails": "Clous",
+  "item.ldoemod.scrap_metal": "Métal de récupération",
+
+  "item.ldoemod.bar_brawl_music_disc": "Disque de musique Bar Brawl",
+  "item.ldoemod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
+
+  "item.ldoemod.strawberry_seeds": "Graines de fraise",
+  "item.ldoemod.strawberry": "Fraise",
+
+  "item.ldoemod.bat": "Batte de baseball apocalyptique",
+  "item.ldoemod.wooden_bat": "Batte en bois",
+  "item.ldoemod.steel_bat": "Batte en fer",
+  "item.ldoemod.dagger": "Dague de récupération",
+  "item.ldoemod.sword": "Épée de récupération",
+  "item.ldoemod.firesword": "Épée imbibée d'essence",
+  "item.ldoemod.big_sword": "Grande épée de récupération",
+  "item.ldoemod.fire_axe": "Hache de feu",
+  "item.ldoemod.big_axe": "Grande hache de récupération",
+
+  "item.ldoemod.scrap_helmet": "Casque de récupération",
+  "item.ldoemod.scrap_chestplate": "Pectoral de récupération",
+  "item.ldoemod.scrap_leggings": "Jambières de récupération",
+  "item.ldoemod.scrap_boots": "Bottes de récupération",
+
+  "block.ldoemod.barbed_wire": "Fil de fer barbelé",
+  "block.ldoemod.radioactive_block": "Bloc radioactif",
+  "block.ldoemod.quicksand": "Sable mouvants",
+  "block.ldoemod.workbench": "Établi",
+  "block.ldoemod.garbage": "Déchet",
+  "block.ldoemod.mining_portal": "Portail vers le Monde Donjon",
+
+  "tooltip.ldoemod.metal_detector.tooltip": "Un outil pour trouver du minerai près de vous !",
+  "tooltip.ldoemod.wooden_bat_desc": "Batte en bois... Toujours très difficile à casser, faisons quelques home run.",
+  "tooltip.ldoemod.steel_bat_desc": "Une batte en acier encore en bonne état, elle a l'air d'envoyer la foudre !",
+  "tooltip.ldoemod.apocalyptic_bat_desc": "La fameuse batte ! Un grand homme a fini par mettre au point ce bijou, il est temps d'en faire bonne usage.",
+  "tooltip.ldoemod.bat_level": "Niveau : ",
+  "tooltip.ldoemod.bat_damage": "Dégâts : ",
+  "tooltip.ldoemod.bat_attackspeed": "Vitesse : ",
+  "tooltip.ldoemod.steel_bat_charge": "Charge : ",
+
+  "sounds.ldoemod.metal_detector_found_ore": "Son du détecteur de métaux",
+  "sounds.ldoemod.bat_hit": "Coup de batte",
+
+  "creativetab.weapon_tab": "Armes",
+  "creativetab.armor_tab": "Armures",
+  "creativetab.block_tab": "Blocs",
+  "creativetab.ingredient_tab": "Ingrédients",
+  "creativetab.misc_tab": "Divers",
+  "creativetab.food_tab": "Nourritures",
+  "creativetab.tool_tab": "Outils"
+}
