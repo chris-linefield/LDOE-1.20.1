@@ -3,6 +3,7 @@ package fr.chrislinefield.ldoe.common.init;
 import fr.chrislinefield.ldoe.LDOEMod;
 import fr.chrislinefield.ldoe.common.item.armor.GhillieSuitArmor;
 import fr.chrislinefield.ldoe.common.item.MetalDetectorItem;
+import fr.chrislinefield.ldoe.common.item.backpack.BackpackItem;
 import fr.chrislinefield.ldoe.common.item.weapons.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -70,6 +71,9 @@ public class ModItems
     public static final RegistryObject<Item> GHILLIE_BOOTS = ITEMS.register("ghillie_boots",
             () -> new GhillieSuitArmor(ModArmorMaterials.GHILLIE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    //BACKPACK
+    public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack",
+            BackpackItem::new);
 
     //FOODS
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",

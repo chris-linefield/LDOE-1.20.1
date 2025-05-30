@@ -100,6 +100,7 @@ public class ModCreativeModTabs
                     .title(Component.translatable("creativetab.misc_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+                        pOutput.accept(ModItems.BACKPACK.get());
                     })
                     .build());
 
