@@ -1,4 +1,4 @@
-package fr.chrislinefield.ldoe.common.item.weapons;
+package fr.chrislinefield.ldoe.common.item.weapons.base;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
@@ -17,23 +17,26 @@ import org.jetbrains.annotations.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.UUID;
 
-public class BaseSwordItem extends TieredItem
+public class BaseBatItem extends TieredItem
 {
     public static final UUID BASE_DAMAGE_UUID = BASE_ATTACK_DAMAGE_UUID;
     public static final UUID BASE_SPEED_UUID = BASE_ATTACK_SPEED_UUID;
+    public static final UUID BASE_KNOCKBACK_UUID = UUID.fromString("4b472947-a9e4-4083-8e46-339d66d2a7ab");
 
     private final int damage;
     private final float speed;
+    private final float knockback;
 
     private final SoundEvent hitSound;
 
-    public BaseSwordItem(Tier tier, int damage, float speed, SoundEvent hitSound, Properties properties) {
+    public BaseBatItem(Tier tier, int damage, float speed, float knockback, SoundEvent hitSound, Properties properties) {
         super(tier, properties);
 
         this.hitSound = hitSound;
 
         this.damage = damage;
         this.speed = speed;
+        this.knockback = knockback;
     }
 
     @ParametersAreNonnullByDefault
@@ -50,6 +53,8 @@ public class BaseSwordItem extends TieredItem
         level.playSeededSound(null, user.getX(), user.getY(), user.getZ(),
                 this.getHitSound(), SoundSource.PLAYERS, 1,
                 level.getRandom().nextInt(10, 20) / 10f, 0);
+
+        enemy.addDeltaMovement(new Vec3(0, this.getKnockback() / 5, 0));
 
         stack.hurtAndBreak(1, user, (user1) -> user1.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 
@@ -72,5 +77,9 @@ public class BaseSwordItem extends TieredItem
 
     public float getSpeed() {
         return speed;
+    }
+
+    public float getKnockback() {
+        return knockback;
     }
 }

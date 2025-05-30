@@ -1,4 +1,4 @@
-package fr.chrislinefield.ldoe.common.item.weapons;
+package fr.chrislinefield.ldoe.common.item.weapons.base;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

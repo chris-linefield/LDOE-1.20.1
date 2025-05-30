@@ -1,4 +1,4 @@
-package fr.chrislinefield.ldoe.common.item;
+package fr.chrislinefield.ldoe.common.item.armor;
 
 import fr.chrislinefield.ldoe.client.model.armor.GhillieSuitModel;
 import fr.chrislinefield.ldoe.common.init.ModArmorItem;

@@ -1,5 +1,6 @@
 package fr.chrislinefield.ldoe.common.item.weapons;
 
+import fr.chrislinefield.ldoe.common.item.weapons.base.BaseBatItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;

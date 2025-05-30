@@ -1,10 +1,9 @@
 package fr.chrislinefield.ldoe.common.init;
 
 import fr.chrislinefield.ldoe.LDOEMod;
-import fr.chrislinefield.ldoe.common.item.GhillieSuitArmor;
+import fr.chrislinefield.ldoe.common.item.armor.GhillieSuitArmor;
 import fr.chrislinefield.ldoe.common.item.MetalDetectorItem;
 import fr.chrislinefield.ldoe.common.item.weapons.*;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -38,11 +37,10 @@ public class ModItems
             () -> new SteelBatItem(Tiers.IRON, SteelBatItem.getAttackDamage(), SteelBatItem.getAttackSpeed(), 1.75f,
                     ModSounds.METAL_BAT_HIT.get(), new Item.Properties().durability(125)));
     public static final RegistryObject<Item> APOCALYPTIC_BAT = ITEMS.register("apocalyptic_bat",
-            ()-> new ApocalypticBatItem(Tiers.DIAMOND, ApocalypticBatItem.getAttackDamage(), ApocalypticBatItem.getAttackSpeed(), 3f,
+            ()-> new ApocalypticBatItem(Tiers.DIAMOND, ApocalypticBatItem.getAttackDamage(), ApocalypticBatItem.getAttackSpeed(), 2f,
                     ModSounds.WOODEN_BAT_HIT.get(), new Item.Properties().durability(600)));
-
     public static final RegistryObject<Item> FIRE_SWORD = ITEMS.register("fire_sword",
-            () -> new FireSwordItem(Tiers.IRON, 2, -2f,
+            () -> new FireSwordItem(Tiers.IRON, FireSwordItem.getAttackDamage(), FireSwordItem.getAttackSpeed(),
                     ModSounds.METAL_BAT_HIT.get(), new Item.Properties().durability(100)));
 
     public static final RegistryObject<Item> SWORD = ITEMS.register("sword",
