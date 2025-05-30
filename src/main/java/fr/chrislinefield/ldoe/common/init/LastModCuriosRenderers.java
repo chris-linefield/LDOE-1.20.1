@@ -1,6 +1,7 @@
 package fr.chrislinefield.ldoe.common.init;
 
 import fr.chrislinefield.ldoe.client.model.item.BackpackModel;
+import fr.chrislinefield.ldoe.client.render.item.AssaultBackpackRenderer;
 import fr.chrislinefield.ldoe.client.render.item.BackpackRenderer;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions;
@@ -19,11 +20,13 @@ public class LastModCuriosRenderers
     public static void registerLayers(RegisterLayerDefinitions evt)
     {
         evt.registerLayerDefinition(ModLayerDefinitions.BACKPACK, BackpackModel::createBodyLayer);
+        evt.registerLayerDefinition(ModLayerDefinitions.ASSAULT_BACKPACK, BackpackModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent evt)
     {
-        CuriosRendererRegistry.register((Item)ModItems.BACKPACK.get(), BackpackRenderer::new);
+        CuriosRendererRegistry.register(ModItems.BACKPACK.get(), BackpackRenderer::new);
+        CuriosRendererRegistry.register(ModItems.ASSAULT_BACKPACK.get(), AssaultBackpackRenderer::new);
     }
 }

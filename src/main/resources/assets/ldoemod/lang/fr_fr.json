@@ -25,6 +25,8 @@
   "item.ldoemod.scrap_chestplate": "Pectoral de récupération",
   "item.ldoemod.scrap_leggings": "Jambières de récupération",
   "item.ldoemod.scrap_boots": "Bottes de récupération",
+  "item.ldoemod.backpack": "Sac à dos",
+  "item.ldoemod.assault_backpack": "Sac à dos d'assaut",
 
   "block.ldoemod.barbed_wire": "Fil de fer barbelé",
   "block.ldoemod.radioactive_block": "Bloc radioactif",

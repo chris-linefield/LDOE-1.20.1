@@ -3,6 +3,7 @@ package fr.chrislinefield.ldoe.common.init;
 import fr.chrislinefield.ldoe.LDOEMod;
 import fr.chrislinefield.ldoe.common.item.armor.GhillieSuitArmor;
 import fr.chrislinefield.ldoe.common.item.MetalDetectorItem;
+import fr.chrislinefield.ldoe.common.item.backpack.AssaultBackpackItem;
 import fr.chrislinefield.ldoe.common.item.backpack.BackpackItem;
 import fr.chrislinefield.ldoe.common.item.weapons.*;
 import net.minecraft.world.item.*;
@@ -74,6 +75,8 @@ public class ModItems
     //BACKPACK
     public static final RegistryObject<Item> BACKPACK = ITEMS.register("backpack",
             BackpackItem::new);
+    public static final RegistryObject<Item> ASSAULT_BACKPACK = ITEMS.register("assault_backpack",
+            AssaultBackpackItem::new);
 
     //FOODS
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",

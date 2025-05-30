@@ -1,6 +1,7 @@
 package fr.chrislinefield.ldoe.common.init;
 
 import fr.chrislinefield.ldoe.LDOEMod;
+import fr.chrislinefield.ldoe.worldgen.inventory.AssaultBackpackMenu;
 import fr.chrislinefield.ldoe.worldgen.inventory.BackpackMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -18,6 +19,8 @@ public class ModMenuTypes
 
     public static final RegistryObject<MenuType<BackpackMenu>> BACKPACK_MENU =
             registerMenuType("backpack_menu", BackpackMenu::new);
+    public static final RegistryObject<MenuType<AssaultBackpackMenu>> ASSAULT_BACKPACK_MENU =
+            registerMenuType("assault_backpack_menu", AssaultBackpackMenu::new);
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

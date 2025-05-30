@@ -1,5 +1,6 @@
 package fr.chrislinefield.ldoe.common.init;
 
+import fr.chrislinefield.ldoe.client.gui.AssaultBackpackScreen;
 import fr.chrislinefield.ldoe.client.gui.BackpackScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,6 +19,7 @@ public class ModMenuScreen
     public static void clientLoad(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MenuScreens.register(ModMenuTypes.BACKPACK_MENU.get(), BackpackScreen::new);
+            MenuScreens.register(ModMenuTypes.ASSAULT_BACKPACK_MENU.get(), AssaultBackpackScreen::new);
         });
     }
 }
