@@ -42,7 +42,7 @@ public class AssaultBackpackItem extends Item implements ICurioItem
             NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
                 @Override
                 public Component getDisplayName() {
-                    return Component.literal("Assault Backpack");
+                    return Component.literal("ldoe.assault_backpack_desc");
                 }
 
                 @Override

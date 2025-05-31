@@ -44,7 +44,7 @@ public class BackpackItem extends Item implements ICurioItem
             NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
                 @Override
                 public Component getDisplayName() {
-                    return Component.literal("Backpack");
+                    return Component.literal("ldoe.backpack_desc");
                 }
 
                 @Override

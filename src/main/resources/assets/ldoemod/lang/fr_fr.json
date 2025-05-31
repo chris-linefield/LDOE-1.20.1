@@ -28,6 +28,10 @@
   "item.ldoemod.backpack": "Sac à dos",
   "item.ldoemod.assault_backpack": "Sac à dos d'assaut",
 
+  "ldoe.backpack_desc": "Sac à dos",
+  "ldoe.assault_backpack_desc": "Sac d'assault",
+  "ldoe.tactical_backpack_desc": "Sac tactique",
+
   "block.ldoemod.barbed_wire": "Fil de fer barbelé",
   "block.ldoemod.radioactive_block": "Bloc radioactif",
   "block.ldoemod.quicksand": "Sable mouvants",
