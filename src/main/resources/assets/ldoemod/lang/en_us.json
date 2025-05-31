@@ -28,6 +28,10 @@
   "item.ldoemod.backpack": "Backpack",
   "item.ldoemod.assault_backpack": "Assault Backpack",
 
+  "item.ldoemod.boomer_spawn_egg": "Boomer Egg",
+  "item.ldoemod.crawler_zombie_spawn_egg": "Crawler Egg",
+  "item.ldoemod.infected_mutated_spawn_egg": "Mutated Infected Egg",
+
   "ldoe.backpack_desc": "Backpack",
   "ldoe.assault_backpack_desc": "Assault Backpack",
   "ldoe.tactical_backpack_desc": "Tactical Backpack",

@@ -1,6 +1,8 @@
 package fr.chrislinefield.ldoe.event;
 
 import fr.chrislinefield.ldoe.LDOEMod;
+import fr.chrislinefield.ldoe.common.entity.InfectedMutatedEntity;
+import fr.chrislinefield.ldoe.common.init.ModEntities;
 import fr.chrislinefield.ldoe.common.init.ModItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.world.entity.npc.VillagerProfession;
@@ -12,6 +14,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,8 +23,8 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = LDOEMod.MOD_ID)
-public class ModEvents {
-
+public class ModEvents
+{
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
         if(event.getType() == VillagerProfession.FARMER) {

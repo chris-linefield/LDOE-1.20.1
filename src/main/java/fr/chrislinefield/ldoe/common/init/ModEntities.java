@@ -3,6 +3,7 @@ package fr.chrislinefield.ldoe.common.init;
 import fr.chrislinefield.ldoe.LDOEMod;
 import fr.chrislinefield.ldoe.common.entity.BoomerEntity;
 import fr.chrislinefield.ldoe.common.entity.CrawlerZombieEntity;
+import fr.chrislinefield.ldoe.common.entity.InfectedMutatedEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,16 @@ public class ModEntities {
                             MobCategory.MONSTER)
                     .sized(0.9f, 0.33F)
                     .build("crawler"));
+
+    public static final RegistryObject<EntityType<InfectedMutatedEntity>> INFECTED_MUTATED =
+            ENTITY_TYPES.register("infected_mutated", () ->
+                    EntityType.Builder.of((EntityType.EntityFactory<InfectedMutatedEntity>) InfectedMutatedEntity::new, MobCategory.MONSTER)
+                            .setShouldReceiveVelocityUpdates(true)
+                            .setTrackingRange(75)
+                            .setUpdateInterval(3)
+                            .setCustomClientFactory(InfectedMutatedEntity::new)
+                            .sized(0.6F, 1.8F)
+                            .build("infected_mutated"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

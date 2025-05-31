@@ -28,6 +28,10 @@
   "item.ldoemod.backpack": "Sac à dos",
   "item.ldoemod.assault_backpack": "Sac à dos d'assaut",
 
+  "item.ldoemod.boomer_spawn_egg": "Oeuf de Boomer",
+  "item.ldoemod.crawler_zombie_spawn_egg": "Oeuf de Rampant",
+  "item.ldoemod.infected_mutated_spawn_egg": "Oeuf de Mutant infecté",
+
   "ldoe.backpack_desc": "Sac à dos",
   "ldoe.assault_backpack_desc": "Sac d'assault",
   "ldoe.tactical_backpack_desc": "Sac tactique",

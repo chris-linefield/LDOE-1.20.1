@@ -2,6 +2,7 @@ package fr.chrislinefield.ldoe;
 
 import fr.chrislinefield.ldoe.client.render.entity.BoomerRenderer;
 import fr.chrislinefield.ldoe.client.render.entity.CrawlerZombieRenderer;
+import fr.chrislinefield.ldoe.client.render.entity.InfectedMutatedRenderer;
 import fr.chrislinefield.ldoe.common.init.*;
 import fr.chrislinefield.ldoe.config.ConfigHelper;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -30,20 +31,14 @@ import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent.Phase;
 import net.minecraftforge.event.TickEvent.ServerTickEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.util.thread.SidedThreadGroups;
-import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent.Context;
-import net.minecraftforge.network.simple.SimpleChannel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import software.bernie.geckolib.GeckoLib;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -68,6 +63,8 @@ public class LDOEMod
 
     public LDOEMod()
     {
+        GeckoLib.initialize();
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ConfigHelper.serverConfig);
         ConfigHelper.loadConfig(ConfigHelper.serverConfig,
                 FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-server.toml").toString());
@@ -132,6 +129,7 @@ public class LDOEMod
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BOOMER_SPANW_EGG);
             event.accept(ModItems.CRAWLER_SPANW_EGG);
+            event.accept(ModItems.INFECTED_MUTATED_SPANW_EGG);
         }
     }
 
@@ -148,6 +146,7 @@ public class LDOEMod
         {
             EntityRenderers.register(ModEntities.BOOMER.get(), BoomerRenderer::new);
             EntityRenderers.register(ModEntities.CRAWLER_ZOMBIE.get(), CrawlerZombieRenderer::new);
+            EntityRenderers.register(ModEntities.INFECTED_MUTATED.get(), InfectedMutatedRenderer::new);
         }
     }
 
@@ -156,14 +155,14 @@ public class LDOEMod
         if (event.phase == Phase.END) {
             List<SimpleEntry<Runnable, Integer>> actions = new ArrayList();
             workQueue.forEach((work) -> {
-                work.setValue((Integer)work.getValue() - 1);
-                if ((Integer)work.getValue() == 0) {
+                work.setValue(work.getValue() - 1);
+                if (work.getValue() == 0) {
                     actions.add(work);
                 }
 
             });
             actions.forEach((e) -> {
-                ((Runnable)e.getKey()).run();
+                e.getKey().run();
             });
             workQueue.removeAll(actions);
         }

@@ -13,6 +13,30 @@
       }
     ]
   },
+  "infectedmutatedidle": {
+    "sounds": [
+      {
+        "name": "ldoemod:infectedmutatedidle",
+        "stream": false
+      }
+    ]
+  },
+  "infectedmutatedhurt": {
+    "sounds": [
+      {
+        "name": "ldoemod:infectedmutatedhurt",
+        "stream": false
+      }
+    ]
+  },
+  "infectedmutateddeath": {
+    "sounds": [
+      {
+        "name": "ldoemod:infectedmutateddeath",
+        "stream": false
+      }
+    ]
+  },
   "boomer_hurt": {
     "sounds": [
       {

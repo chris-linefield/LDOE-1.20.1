@@ -65,6 +65,7 @@ public class ModItemModelProvider extends ItemModelProvider
         //EGG
         withExistingParent(ModItems.BOOMER_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.CRAWLER_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.INFECTED_MUTATED_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         //BLOCK
         complexBlock(ModBlocks.WORKBENCH.get());
 
